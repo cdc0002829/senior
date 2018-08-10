@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/total_rl"
+    android:layout_width="match_parent"
+    android:layout_height="129px"
+    android:background="@drawable/item_bg_selector">
+
+    <ImageView
+        android:id="@+id/icon_iv"
+        android:layout_width="60px"
+        android:layout_height="60px"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16px"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/content_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="104px"
+        android:lines="1"
+        android:maxEms="10"
+        android:text="fdsfadygghggikgiasga"
+        android:textColor="@android:color/white"
+        android:textSize="40px" />
+
+    <TextView
+        android:id="@+id/time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="300px"
+        android:text="16:20"
+        android:textColor="@android:color/white"
+        android:textSize="42px" />
+
+    <Button
+        android:id="@+id/delete_ib"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="50px"
+        android:background="@drawable/delete_selector" />
+
+</RelativeLayout>

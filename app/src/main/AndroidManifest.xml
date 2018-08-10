@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kotei.yangz.messagecenter">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name="com.kotei.yangz.messagecenter.activity.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.kotei.yangz.messagecenter.reiceiver.SlptServiceInstalledReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name=".service.LocalService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.kotei.yangz.messagecenter.service.LocalService" />
+            </intent-filter>
+        </service>
+        <!--运行在新进程-->
+
+        <activity
+            android:name="com.kotei.yangz.messagecenter.dialog.BatteryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"
+            android:theme="@style/WindowManageDialog"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+
+        <activity
+            android:name="com.kotei.yangz.messagecenter.dialog.OilActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"
+            android:theme="@style/WindowManageDialog"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+
+        <activity
+            android:name="com.kotei.yangz.messagecenter.dialog.DataActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"
+            android:theme="@style/WindowManageDialog"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+
+        <activity
+            android:name="com.kotei.yangz.messagecenter.dialog.TboxActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"
+            android:theme="@style/WindowManageDialog"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+
+        <activity
+            android:name="com.kotei.yangz.messagecenter.dialog.RepairActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"
+            android:theme="@style/WindowManageDialog"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+
+        <provider
+            android:name=".provider.MessageProvider"
+            android:authorities="com.kotei.yangz.messagecenter.provider"
+            android:exported="true"/>
+    </application>
+
+</manifest>

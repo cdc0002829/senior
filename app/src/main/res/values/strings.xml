@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="clean">清空</string>
+    <string name="no_message">无通知</string>
+</resources>
